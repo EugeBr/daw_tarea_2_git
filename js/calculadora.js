@@ -35,6 +35,8 @@ export function leerNumero(texto) {
  * @throws {Error} Si el precio es negativo o el IVA no es válido.
  */
 export function calcularPrecioFinal(precio, iva) {
+  console.log(variableInexistente);
+  
   if (precio < 0) {
     throw new Error("El precio no puede ser negativo.");
   }
