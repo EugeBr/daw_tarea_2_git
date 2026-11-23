@@ -1,0 +1,50 @@
+
+name: CI - Calculadora de IVA
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality-check:
+    name: Validación y documentación
+    runs-on: ubuntu-latest
+
+    steps:
+      # Descargar el código del repositorio
+      - name: Obtener código
+        uses: actions/checkout@v6
+
+      # Configurar Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      # Instalar dependencias
+      - name: Instalar dependencias
+        run: npm ci
+
+      # Ejecutar ESLint
+      - name: Ejecutar linter
+        run: npm run lint
+
+      # Ejecutar pruebas
+      - name: Ejecutar tests
+        run: npm test
+
+      # Generar documentación JSDoc
+      - name: Generar documentación
+        run: npm run docs
+
+      # Guardar documentación como artefacto
+      - name: Publicar documentación como artefacto
+        uses: actions/upload-artifact@v7
+        with:
+          name: documentacion-api
+          path: docs/api/
+          retention-days: 14

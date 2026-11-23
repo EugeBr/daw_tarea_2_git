@@ -104,7 +104,7 @@
     
 
     
-    <h4 class="name" id="calcularPrecioFinal"><span class="type-signature"></span>calcularPrecioFinal<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="calcularPrecioFinal"><span class="type-signature"></span>calcularPrecioFinal<span class="signature">(precio, iva)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -112,7 +112,7 @@
 
 
 <div class="description">
-    Calcula el precio final aplicando el IVA seleccionado.Obtiene el precio introducido por el usuario, valida que no seanegativo y muestra el resultado con dos decimales.Si se produce un error durante el proceso, muestra el mensajecorrespondiente en el elemento de resultado.Devuelve el precio con desglose.
+    Calcula el desglose del precio aplicando el IVA seleccionado.
 </div>
 
 
@@ -121,6 +121,78 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>precio</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Precio sin IVA.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>iva</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Porcentaje de IVA en formato decimal.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -156,7 +228,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line42">line 42</a>
+        <a href="calculadora.js.html">calculadora.js</a>, <a href="calculadora.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -179,11 +251,44 @@
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Si el precio es negativo o el IVA no es válido.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    Desglose del precio calculado.
+</div>
+
 
 
 <dl>
@@ -192,7 +297,7 @@
     </dt>
     <dd>
         
-<span class="param-type">void</span>
+<span class="param-type">Object</span>
 
 
     </dd>
@@ -311,7 +416,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line17">line 17</a>
+        <a href="calculadora.js.html">calculadora.js</a>, <a href="calculadora.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -393,6 +498,112 @@
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="mostrarResultado"><span class="type-signature"></span>mostrarResultado<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Calcula el precio final aplicando el IVA seleccionado.Obtiene el precio y el porcentaje de IVA introducidos,valida los datos y muestra el desglose del cálculo.Si se produce un error, muestra el mensaje correspondiente.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
     
 
     
@@ -408,13 +619,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#calcularPrecioFinal">calcularPrecioFinal</a></li><li><a href="global.html#leerNumero">leerNumero</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#calcularPrecioFinal">calcularPrecioFinal</a></li><li><a href="global.html#leerNumero">leerNumero</a></li><li><a href="global.html#mostrarResultado">mostrarResultado</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Nov 23 2026 09:13:27 GMT+0100 (hora estándar de Europa central)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Nov 23 2026 09:46:16 GMT+0100 (hora estándar de Europa central)
 </footer>
 
 <script> prettyPrint(); </script>
