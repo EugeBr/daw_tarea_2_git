@@ -1,6 +1,6 @@
 "use strict";
 
-const IVA = 0.21;
+const campoIVA = document.getElementById("iva");
 const campoPrecio = document.getElementById("precio");
 const botonCalcular = document.getElementById("calcular");
 const resultado = document.getElementById("resultado");
@@ -23,8 +23,14 @@ function calcularPrecioFinal() {
     if (precio < 0) {
       throw new Error("El precio no puede ser negativo.");
     }
-    const total = precio * (1 + IVA);
-    resultado.textContent = `Precio con IVA: ${total.toFixed(2)} €`;
+    const iva = Number(campoIVA.value);
+    const importeIVA = precio * iva;
+    const total = precio + importeIVA;
+
+    resultado.textContent =
+      `Precio sin IVA: ${precio.toFixed(2)} € | ` +
+      `IVA (${(iva * 100).toFixed(0)} %): ${importeIVA.toFixed(2)} € | ` +
+      `Precio final: ${total.toFixed(2)} €`;
   } catch (error) {
     resultado.textContent = error.message;
   }

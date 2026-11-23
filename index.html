@@ -1,15 +1,23 @@
 <!doctype html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Precio con IVA</title>
     <script src="js/script.js" defer></script>
-</head>
+  </head>
 
-<body> <label for="precio">Precio sin IVA (€):</label> <input id="precio" type="text" inputmode="decimal" /> <button
-        id="calcular" type="button">Calcular</button>
+  <body>
+    <label for="precio">Precio sin IVA (€):</label>
+    <input id="precio" type="text" inputmode="decimal" />
+
+    <label for="iva">Tipo de IVA:</label>
+    <select id="iva">
+      <option value="0.21">21 %</option>
+      <option value="0.10">10 %</option>
+      <option value="0.04">4 %</option>
+    </select>
+
+    <button id="calcular" type="button">Calcular</button>
     <p id="resultado"></p>
-</body>
-
+  </body>
 </html>
