@@ -5,6 +5,15 @@ const campoPrecio = document.getElementById("precio");
 const botonCalcular = document.getElementById("calcular");
 const resultado = document.getElementById("resultado");
 
+/**
+ * Convierte un texto en un número válido.
+ *
+ * Acepta tanto la coma como el punto como separador decimal.
+ *
+ * @param {string} texto - Texto que se desea convertir.
+ * @returns {number} Número convertido.
+ * @throws {Error} Si el campo está vacío o el valor no es numérico.
+ */
 function leerNumero(texto) {
   const limpio = texto.trim().replace(",", ".");
   if (limpio === "") {
@@ -17,6 +26,19 @@ function leerNumero(texto) {
   return numero;
 }
 
+/**
+ * Calcula el precio final aplicando el IVA seleccionado.
+ *
+ * Obtiene el precio introducido por el usuario, valida que no sea
+ * negativo y muestra el resultado con dos decimales.
+ *
+ * Si se produce un error durante el proceso, muestra el mensaje
+ * correspondiente en el elemento de resultado.
+ * 
+ * Devuelve el precio con desglose.
+ *
+ * @returns {void}
+ */
 function calcularPrecioFinal() {
   try {
     const precio = leerNumero(campoPrecio.value);

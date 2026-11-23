@@ -4,7 +4,8 @@
   "description": "Este proyecto consiste en una aplicación web sencilla que permite calcular el precio final de un producto o servicio aplicando el Impuesto sobre el Valor Añadido (IVA) del 21 % sobre el precio original.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/EugeBr/daw_tarea_2_git#readme",
   "devDependencies": {
+    "jsdoc": "^4.0.5",
     "prettier": "^3.10.1"
   }
 }
