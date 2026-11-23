@@ -24,8 +24,13 @@ function calcularPrecioFinal() {
       throw new Error("El precio no puede ser negativo.");
     }
     const iva = Number(campoIVA.value);
-    const total = precio * (1 + iva);
-    resultado.textContent = `Precio con IVA: ${total.toFixed(2)} €`;
+    const importeIVA = precio * iva;
+    const total = precio + importeIVA;
+
+    resultado.textContent =
+      `Precio sin IVA: ${precio.toFixed(2)} € | ` +
+      `IVA (${(iva * 100).toFixed(0)} %): ${importeIVA.toFixed(2)} € | ` +
+      `Precio final: ${total.toFixed(2)} €`;
   } catch (error) {
     resultado.textContent = error.message;
   }
